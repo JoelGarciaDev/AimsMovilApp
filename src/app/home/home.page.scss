@@ -25,3 +25,25 @@
 #container a {
   text-decoration: none;
 }
+
+.custom-header {
+  --background: #ffffff;
+  padding-top: 20px;
+  /* Fondo blanco */
+}
+
+.logo-center {
+  text-align: center;
+}
+
+.logo-image {
+  height: 50px;
+  /* Ajusta el tamaño del logotipo según tus preferencias */
+}
+
+.separator-line {
+  height: 1px;
+  background-color: #000;
+  /* Color de la línea de separación */
+  width: 100%;
+}
