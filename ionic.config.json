@@ -1,0 +1,7 @@
+{
+  "name": "aimsApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
