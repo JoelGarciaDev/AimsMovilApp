@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { EstadisticasPageRoutingModule } from './estadisticas-routing.module';
 
 import { EstadisticasPage } from './estadisticas.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EstadisticasPageRoutingModule
+    EstadisticasPageRoutingModule,
+    SharedModule
   ],
   declarations: [EstadisticasPage]
 })
-export class EstadisticasPageModule {}
+export class EstadisticasPageModule { }

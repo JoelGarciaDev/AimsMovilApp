@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { MiPerfilPageRoutingModule } from './mi-perfil-routing.module';
 
 import { MiPerfilPage } from './mi-perfil.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MiPerfilPageRoutingModule
+    MiPerfilPageRoutingModule,
+    SharedModule
   ],
   declarations: [MiPerfilPage]
 })
-export class MiPerfilPageModule {}
+export class MiPerfilPageModule { }

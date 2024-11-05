@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { AutomatizarRiegoPageRoutingModule } from './automatizar-riego-routing.module';
 
 import { AutomatizarRiegoPage } from './automatizar-riego.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AutomatizarRiegoPageRoutingModule
+    AutomatizarRiegoPageRoutingModule,
+    SharedModule
   ],
   declarations: [AutomatizarRiegoPage]
 })
-export class AutomatizarRiegoPageModule {}
+export class AutomatizarRiegoPageModule { }
