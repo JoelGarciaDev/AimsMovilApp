@@ -47,3 +47,67 @@
   /* Color de la línea de separación */
   width: 100%;
 }
+
+#container {
+  padding: 20px;
+}
+
+#container-dataTittles {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  
+  gap: 15px;  
+}
+
+.data-card {
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  --ion-card-background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.icon-container {
+  background-color: #0B3A34;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-icon {
+  font-size: 40px;  
+  color: white;
+}
+
+ion-card-title {
+  background-color: #0B3A34; 
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.card-content {
+  background-color: white;
+  color: #333;
+  padding: 10px 5px;
+}
+
+.data-value {
+  font-size: 24px;
+  color: #0B3A34;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.data-range {
+  font-size: 12px;
+  color: #0B3A34;
+  margin: 0;
+}
+
