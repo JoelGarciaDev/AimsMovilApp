@@ -1,60 +1,78 @@
 <app-custom-header></app-custom-header>
 
-<ion-content [fullscreen]="true">
-  <div id="container">
-    <div id="container-dataTittles">
-      <strong>Bienvenido, Joel García</strong><br>
-      <span style="color: gray;">{{ lastReading }}</span>
+<ion-content>
+  <ion-content [fullscreen]="true">
+    <div id="container">
+      <div id="container-dataTittles">
+        <strong>Bienvenido, Joel García</strong><br>
+        <span style="color: gray;">{{ lastDayRegistered}} - {{lastHourRegistered}}</span>
+      </div>
+
+      <div id="grid-container">
+        <!-- Tarjeta de Temperatura -->
+        <ion-card class="data-card">
+          <div class="icon-container">
+            <ion-icon name="thermometer-outline" class="data-icon"></ion-icon>
+            <ion-label class="data-icon">{{currentTemperaturaAmbiente}} °C</ion-label>
+          </div>
+          <ion-card-title>Temperatura</ion-card-title>
+          <ion-card-content class="card-content">
+            <p class="data-value">min. {{ minTemperaturaAmbiente }} °C</p>
+            <p class="data-range">max. {{ maxTemperaturaAmbiente }} °C</p>
+          </ion-card-content>
+        </ion-card>
+
+        <!-- Tarjeta de Nivel del agua -->
+        <ion-card class="data-card">
+          <div class="icon-container">
+            <ion-icon name="water-outline" class="data-icon"></ion-icon>
+            <ion-label class="data-icon"> {{waterLevel}} °C</ion-label>
+          </div>
+          <ion-card-title>Nivel del agua</ion-card-title>
+          <ion-card-content class="card-content">
+            <p class="data-value">{{ waterLevel }} %</p>
+          </ion-card-content>
+        </ion-card>
+
+        <!-- Tarjeta de Humedad del ambiente -->
+        <ion-card class="data-card">
+          <div class="icon-container">
+            <ion-icon name="rainy-outline" class="data-icon"></ion-icon>
+            <ion-label class="data-icon"> {{currentHumedadAmbiente}} %</ion-label>
+          </div>
+          <ion-card-title>
+            Humedad del ambiente
+          </ion-card-title>
+          <ion-card-content class="card-content">
+            <p class="data-value">min. {{ minHumedadAmbiente }} %</p>
+            <p class="data-range">max. {{ maxHumedadAmbiente }} %</p>
+          </ion-card-content>
+        </ion-card>
+
+        <!-- Tarjeta de Humedad del suelo -->
+        <ion-card class="data-card">
+          <div class="icon-container">
+            <ion-icon name="leaf-outline" class="data-icon"></ion-icon>
+            <ion-label class="data-icon"> {{currentHumedadSensor1}} %</ion-label>
+          </div>
+          <ion-card-title>Humedad del suelo S.1</ion-card-title>
+          <ion-card-content class="card-content">
+            <p class="data-value">min. {{ minHumedadSensor1 }}</p>
+            <p class="data-range">max. {{ maxHumedadSensor1 }}</p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="data-card">
+          <div class="icon-container">
+            <ion-icon name="leaf-outline" class="data-icon"></ion-icon>
+            <ion-label class="data-icon"> {{currentHumedadSensor2}} %</ion-label>
+          </div>
+          <ion-card-title>Humedad del suelo S.2</ion-card-title>
+          <ion-card-content class="card-content">
+            <p class="data-value">min. {{ minHumedadSensor2 }}</p>
+            <p class="data-range">max. {{ maxHumedadSensor2 }}</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
     </div>
-
-    <div id="grid-container">
-      <!-- Tarjeta de Temperatura -->
-      <ion-card class="data-card">
-        <div class="icon-container">
-          <ion-icon name="thermometer-outline" class="data-icon"></ion-icon>
-        </div>
-        <ion-card-title>Temperatura</ion-card-title>
-        <ion-card-content class="card-content">
-          <p class="data-value">{{ Temperature }} °C</p>
-          <p class="data-range">{{ Temperature }} °C</p>
-        </ion-card-content>
-      </ion-card>
-
-      <!-- Tarjeta de Nivel del agua -->
-      <ion-card class="data-card">
-        <div class="icon-container">
-          <ion-icon name="water-outline" class="data-icon"></ion-icon>
-        </div>
-        <ion-card-title>Nivel del agua</ion-card-title>
-        <ion-card-content class="card-content">
-          <p class="data-value">{{ waterlevel }}</p>
-        </ion-card-content>
-      </ion-card>
-
-      <!-- Tarjeta de Humedad del ambiente -->
-      <ion-card class="data-card">
-        <div class="icon-container">
-          <ion-icon name="rainy-outline" class="data-icon"></ion-icon>
-        </div>
-        <ion-card-title>Humedad del ambiente</ion-card-title>
-        <ion-card-content class="card-content">
-          <p class="data-value">min. {{ ambientHumidity }} %</p>
-          <p class="data-range">max. {{ ambientHumidity }} %</p>
-        </ion-card-content>
-      </ion-card>
-
-      <!-- Tarjeta de Humedad del suelo -->
-      <ion-card class="data-card">
-        <div class="icon-container">
-          <ion-icon name="leaf-outline" class="data-icon"></ion-icon>
-        </div>
-        <ion-card-title>Humedad del suelo</ion-card-title>
-        <ion-card-content class="card-content">
-          <p class="data-value">{{ soilHumidity }}</p>
-          <p class="data-range">{{ soilHumidity }}</p>
-        </ion-card-content>
-      </ion-card>
-    </div>
-  </div>
-
-</ion-content>
+  </ion-content>
