@@ -1,0 +1,58 @@
+
+.container {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  height: 100vh; 
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.form-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000000;
+  text-align: center;
+}
+
+.input-item {
+  width: 90%; 
+  max-width: 350px; 
+  margin-bottom: 15px; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.custom-select, .custom-timepicker {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Botón */
+.action-button {
+  background-color: #0B3A34; 
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 90%; 
+  max-width: 350px; 
+  text-align: center;
+}
+

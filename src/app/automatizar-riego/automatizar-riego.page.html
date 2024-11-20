@@ -1,10 +1,37 @@
 <app-custom-header></app-custom-header>
 
+<ion-content>
+  <div class="container">
+    <!-- Título -->
+    <div class="form-title">Automatizar riego</div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">automatizarRiego</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <!-- Campo de litros -->
+    <div class="input-item">
+      <label class="input-label">Litros</label>
+      <select class="custom-select">
+        <option value="50">50 L</option>
+        <option value="100">100 L</option>
+        <option value="150">150 L</option>
+      </select>
+    </div>
+
+    <!-- Campo de horario -->
+    <div class="input-item">
+      <label class="input-label">Horario</label>
+      <input type="time" class="custom-timepicker" />
+    </div>
+
+    <!-- Seleccionar planta -->
+    <div class="input-item">
+      <label class="input-label">Seleccionar planta</label>
+      <select class="custom-select">
+        <option value="motita">Motita</option>
+        <option value="roble">Roble</option>
+        <option value="cactus">Cactus</option>
+      </select>
+    </div>
+
+    <!-- Botón -->
+    <button class="action-button">Automatizar</button>
+  </div>
 </ion-content>

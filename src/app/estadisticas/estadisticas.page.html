@@ -1,9 +1,61 @@
 <app-custom-header></app-custom-header>
 
+
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">estadisticas</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container">
+    <div class="title-container">
+      <strong>Estadísticas</strong>
+      <p class="subtitle">Datos recolectados</p>
+    </div>
+    <div class="button-group"> 
+      <ion-button (click)="lookDate(false)">HOY</ion-button>
+      <ion-button (click)="lookDate(false)">SEMANA</ion-button>
+      <ion-button (click)="lookDate(false)">MES</ion-button>
+      <ion-button (click)="lookDate(true)">Otro</ion-button>
+    </div>
+    <div *ngIf="lookDateSelection" class="date-container">
+      <div class="date-item">
+        <p>Fecha de Inicio</p>
+        <div class="date-button">
+          <ion-datetime-button datetime="datetimeInicio"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="datetimeInicio"
+              presentation="date"
+              [formatOptions]="{
+                date: {
+                  weekday: 'short',
+                  month: 'long',
+                  day: '2-digit'
+                }
+              }"
+            > {{initialDate}}</ion-datetime>
+          </ng-template>
+        </ion-modal>
+        </div>
+      </div>
+      <div class="date-item">
+        <p>Fecha Final</p>
+        <div class="date-button">
+        <ion-datetime-button datetime="datetimeFinal"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="datetimeFinal"
+              presentation="date"
+              [formatOptions]="{
+                date: {
+                  weekday: 'short',
+                  month: 'long',
+                  day: '2-digit'
+                }
+              }"
+            >{{endDate}}</ion-datetime>
+          </ng-template>
+        </ion-modal>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

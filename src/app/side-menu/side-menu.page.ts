@@ -37,7 +37,7 @@ export class SideMenuPage implements OnInit {
     },
     {
       title: 'Configuración',
-      url: './configuración',
+      url: './configuracion',
       icon: '../assets/icon/config.svg'
     },
     {

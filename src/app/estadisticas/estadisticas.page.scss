@@ -1,0 +1,59 @@
+.container {
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  .title-container strong {
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .subtitle {
+    color: gray;
+    margin-top: 4px;
+    font-size: 14px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  ion-button {
+    --background: #0B3A34;
+    --border-radius: 20px;
+    --padding-start: 12px;
+    --padding-end: 12px;
+  }
+
+  .date-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    margin: 20px;
+  }
+  
+  .date-item {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
+  }
+  
+  .date-item p {
+    color: #0B3A34;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .date-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  
