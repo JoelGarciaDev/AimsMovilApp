@@ -21,7 +21,7 @@ export class SideMenuPage implements OnInit {
       icon: '../assets/icon/mi-jardin.svg'
     },
     {
-      title: 'Automatizar Riego',
+      title: 'Configurar Riego',
       url: './automatizar-riego',
       icon: '../assets/icon/automatizar.svg'
     },
@@ -36,7 +36,7 @@ export class SideMenuPage implements OnInit {
       icon: '../assets/icon/mi-perfil.svg'
     },
     {
-      title: 'Configuración',
+      title: 'Ajustes',
       url: './configuracion',
       icon: '../assets/icon/config.svg'
     },
