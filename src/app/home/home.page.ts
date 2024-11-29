@@ -28,9 +28,9 @@ export class HomePage implements OnInit {
   lastDayRegistered: string = "";
   lastHourRegistered: string = "";
 
-  currentHumedadSensor1: number = 0;
-  maxHumedadSensor1: number = 0;
-  minHumedadSensor1: number = 0;
+  currentHumedadSuelo: number = 0;
+  maxHumedadSuelo: number = 0;
+  minHumedadSuelo: number = 0;
   promedioHumedadSensor1: number = 0;
 
   currentHumedadSensor2: number = 0;
@@ -64,11 +64,11 @@ export class HomePage implements OnInit {
 
     // Mapear valores a las variables
     this.currentHumedadAmbiente = humedadAmbiente?.actual || 0;
-    this.maxHumedadAmbiente = humedadAmbiente.estadistics?.max || 0;
-    this.minHumedadAmbiente = humedadAmbiente.estadistics?.min || 0;
+    this.maxHumedadAmbiente = humedadAmbiente.estadisticas?.max || 0;
+    this.minHumedadAmbiente = humedadAmbiente.estadisticas?.min || 0;
 
     this.currentIluminacion = iluminacion?.actual || 0;
-    this.iluminacionMax = iluminacion.estadistics?.max || 0;
+    this.iluminacionMax = iluminacion.estadisticas?.max || 0;
 
     // Extraer lastDay y lastHour del array de fecha/hora
     // if (timestamp) {
@@ -82,8 +82,8 @@ export class HomePage implements OnInit {
     const date = new Date(timestamp.lastTimeStamp * 1000);
 
     // Extrae el día, mes y año
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // Los meses son base 0
+    const day = String(date.getUTCDate()).padStart(2, '0');
+    const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Los meses son base 0
     const year = date.getFullYear();
 
     // Formatea la fecha como dd/mm/aaaa
@@ -92,20 +92,21 @@ export class HomePage implements OnInit {
     this.lastDayRegistered = formattedDate;
 
     // Extrae hora, minutos y segundos
-    const hours = String(date.getHours()).padStart(2, '0');
-    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const hours = String(date.getUTCHours()).padStart(2, '0');
+    console.log(date);
+    const minutes = String(date.getUTCMinutes()).padStart(2, '0');
     // Formatea la hora como hh:mm:ss
-    const formattedTime = `${hours}:${minutes}`;
+    const formattedTime = `${hours}:${minutes} hrs.`;
 
     this.lastHourRegistered = formattedTime;
 
-    this.currentHumedadSensor1 = humedadSuelo?.actual || 0;
-    this.maxHumedadSensor1 = humedadSuelo.estadistics?.max || 0;
-    this.minHumedadSensor1 = humedadSuelo.estadistics?.min || 0;
+    this.currentHumedadSuelo = humedadSuelo?.actual || 0;
+    this.maxHumedadSuelo = humedadSuelo.estadisticas?.max || 0;
+    this.minHumedadSuelo = humedadSuelo.estadisticas?.min || 0;
 
     this.currentTemperaturaAmbiente = temperaturaAmbiente?.actual || 0;
-    this.maxTemperaturaAmbiente = temperaturaAmbiente.estadistics?.max || 0;
-    this.minTemperaturaAmbiente = temperaturaAmbiente.estadistics?.min || 0;
+    this.maxTemperaturaAmbiente = temperaturaAmbiente.estadisticas?.max || 0;
+    this.minTemperaturaAmbiente = temperaturaAmbiente.estadisticas?.min || 0;
 
     this.waterLevel = nivelAgua?.actual || 0;
   }
