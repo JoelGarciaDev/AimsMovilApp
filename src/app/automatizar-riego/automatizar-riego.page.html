@@ -5,12 +5,12 @@
     <div class="form-title">Configurar riego</div>
 
     <ion-item lines="none" class="toggle-item">
-      <ion-label position="start">Auto</ion-label>
-      <ion-toggle [(ngModel)]="isManual"></ion-toggle>
-      <ion-label position="end">Manual</ion-label>
+      <ion-label position="start">Manual</ion-label>
+      <ion-toggle [(ngModel)]="isAuto"></ion-toggle>
+      <ion-label position="end">Auto</ion-label>
     </ion-item>
 
-    <div *ngIf="isManual">
+    <div *ngIf="isAuto">
       <!-- Controlar por nivel de luz -->
       <div class="input-item">
         <label class="input-label">Nivel de luz</label>
@@ -42,7 +42,7 @@
       </div>
 
       <!-- Configurar tiempo de riego -->
-      <div class="input-item">
+      <!-- <div class="input-item">
         <label class="input-label">Tiempo de riego (segundos)</label>
         <div class="time-picker-container">
           <input 
@@ -54,9 +54,9 @@
             [(ngModel)]="irrigationTime"
           />
         </div>
-      </div>
+      </div> -->
 
-      <div class="input-item">
+      <!-- <div class="input-item">
         <label class="input-label">Horario</label>
         <div class="time-picker-container">
           <input 
@@ -77,9 +77,8 @@
             [(ngModel)]="selectedMinutes"
           />
         </div>
-      </div>
+      </div> -->
     </div>
-
     <button class="action-button" (click)="confirmConfiguration()">Confirmar configuración</button>
   </div>
 </ion-content>

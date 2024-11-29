@@ -7,7 +7,7 @@ import { MqttService } from '../services/mqtt.service';
   styleUrls: ['./automatizar-riego.page.scss'],
 })
 export class AutomatizarRiegoPage {
-  isManual: boolean = false;
+  isAuto: boolean = false;
   lightLevel: number = 0; 
   soilMoisture: number = 0; 
   irrigationTime: number = 0;
@@ -19,25 +19,20 @@ export class AutomatizarRiegoPage {
   confirmConfiguration() {
     const topic = 'ucol/iot/config';
     
-    if (!this.isManual) {
-      const autoMessage = JSON.stringify({ modo: 'auto' });
-      this.mqttService.publish(topic, autoMessage);
-      console.log('Modo auto enviado:', autoMessage);
+    if (!this.isAuto) {
+      const manualMessage = JSON.stringify({ modo: 'manual' });
+      this.mqttService.publish(topic, manualMessage);
+      console.log('Modo auto enviado:', manualMessage);
     } else {
-      const manualMessage = JSON.stringify({
-        modo: 'manual',
+      const autoMessage = JSON.stringify({
+        modo: 'auto',
         nivelLuz: this.lightLevel,
         humedadSuelo: this.soilMoisture,
-        tiempoRiego: this.irrigationTime,
-        horario: {
-          horas: this.selectedHours,
-          minutos: this.selectedMinutes,
-        },
       });
 
-      this.mqttService.publish(topic, manualMessage);
+      this.mqttService.publish(topic, autoMessage);
 
-      console.log('Configuración enviada por modo manual:', manualMessage);
+      console.log('Configuración enviada por modo manual:', autoMessage);
     }
   }
 }

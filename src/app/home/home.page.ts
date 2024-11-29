@@ -60,15 +60,15 @@ export class HomePage implements OnInit {
     const temperaturaAmbiente = data.find(item => item?.id === 'temperaturaAmbiente');
     const nivelAgua = data.find(item => item?.id === 'nivelAgua');
 
-    console.log(timestamp.lastTimeStamp);
+    console.log(timestamp.humedadAmbiente);
 
     // Mapear valores a las variables
-    this.currentHumedadAmbiente = humedadAmbiente?.currentHumedadAmbiente || 0;
-    this.maxHumedadAmbiente = humedadAmbiente?.maxHumedadAmbiente || 0;
-    this.minHumedadAmbiente = humedadAmbiente?.minHumedadAmbiente || 0;
+    this.currentHumedadAmbiente = humedadAmbiente?.actual || 0;
+    this.maxHumedadAmbiente = humedadAmbiente.estadistics?.max || 0;
+    this.minHumedadAmbiente = humedadAmbiente.estadistics?.min || 0;
 
-    this.currentIluminacion = iluminacion?.currentIluminacion || 0;
-    this.iluminacionMax = iluminacion?.iluminacionMax || 0;
+    this.currentIluminacion = iluminacion?.actual || 0;
+    this.iluminacionMax = iluminacion.estadistics?.max || 0;
 
     // Extraer lastDay y lastHour del array de fecha/hora
     // if (timestamp) {
@@ -99,14 +99,14 @@ export class HomePage implements OnInit {
 
     this.lastHourRegistered = formattedTime;
 
-    this.currentHumedadSensor1 = humedadSuelo?.currentHumedadSensor1 || 0;
-    this.maxHumedadSensor1 = humedadSuelo?.maxHumedadSensor1 || 0;
-    this.minHumedadSensor1 = humedadSuelo?.minHumedadSensor1 || 0;
+    this.currentHumedadSensor1 = humedadSuelo?.actual || 0;
+    this.maxHumedadSensor1 = humedadSuelo.estadistics?.max || 0;
+    this.minHumedadSensor1 = humedadSuelo.estadistics?.min || 0;
 
-    this.currentTemperaturaAmbiente = temperaturaAmbiente?.currentTemperaturaAmbiente || 0;
-    this.maxTemperaturaAmbiente = temperaturaAmbiente?.maxTemperaturaAmbiente || 0;
-    this.minTemperaturaAmbiente = temperaturaAmbiente?.minTemperaturaAmbiente || 0;
+    this.currentTemperaturaAmbiente = temperaturaAmbiente?.actual || 0;
+    this.maxTemperaturaAmbiente = temperaturaAmbiente.estadistics?.max || 0;
+    this.minTemperaturaAmbiente = temperaturaAmbiente.estadistics?.min || 0;
 
-    this.waterLevel = nivelAgua?.estanque1 || 0;
+    this.waterLevel = nivelAgua?.actual || 0;
   }
 }
