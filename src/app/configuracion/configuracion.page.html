@@ -1,9 +1,32 @@
 <app-custom-header></app-custom-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">configuracion</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="container">
+    <div class="form-title">Ajustes</div>
+
+    <div class="input-item">
+      <label class="input-label">Escala de Temperatura</label>
+      <select class="custom-select">
+        <option value="Celcius">Celcius</option>
+        <option value="Fahrenheit">Fahrenheit</option>
+        <option value="Kelvin">Kelvin</option>
+      </select>
+    </div>
+
+    <div class="input-item">
+      <label class="input-label">Horario</label>
+      <input type="time" class="custom-timepicker" />
+    </div>
+
+    <div class="input-item">
+      <label class="input-label">Seleccionar planta</label>
+      <select class="custom-select">
+        <option value="motita">Motita</option>
+        <option value="roble">Roble</option>
+        <option value="cactus">Cactus</option>
+      </select>
+    </div>
+
+    <button class="action-button">Configurar</button>
+  </div>
 </ion-content>

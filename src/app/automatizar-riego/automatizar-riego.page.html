@@ -1,10 +1,85 @@
 <app-custom-header></app-custom-header>
 
+<ion-content>
+  <div class="container">
+    <div class="form-title">Configurar riego</div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">automatizarRiego</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-item lines="none" class="toggle-item">
+      <ion-label position="start">Auto</ion-label>
+      <ion-toggle [(ngModel)]="isManual"></ion-toggle>
+      <ion-label position="end">Manual</ion-label>
+    </ion-item>
+
+    <div *ngIf="isManual">
+      <!-- Controlar por nivel de luz -->
+      <div class="input-item">
+        <label class="input-label">Nivel de luz</label>
+        <div class="time-picker-container">
+          <input 
+            type="number" 
+            class="time-picker" 
+            placeholder="Nivel de luz" 
+            min="0" 
+            max="100" 
+            [(ngModel)]="lightLevel"
+          />
+        </div>
+      </div>
+
+      <!-- Controlar por % de humedad del suelo -->
+      <div class="input-item">
+        <label class="input-label">Humedad del suelo (%)</label>
+        <div class="time-picker-container">
+          <input 
+            type="number" 
+            class="time-picker" 
+            placeholder="% Humedad" 
+            min="0" 
+            max="100" 
+            [(ngModel)]="soilMoisture"
+          />
+        </div>
+      </div>
+
+      <!-- Configurar tiempo de riego -->
+      <div class="input-item">
+        <label class="input-label">Tiempo de riego (segundos)</label>
+        <div class="time-picker-container">
+          <input 
+            type="number" 
+            class="time-picker" 
+            placeholder="Tiempo en segundos" 
+            min="1" 
+            max="3600" 
+            [(ngModel)]="irrigationTime"
+          />
+        </div>
+      </div>
+
+      <div class="input-item">
+        <label class="input-label">Horario</label>
+        <div class="time-picker-container">
+          <input 
+            type="number" 
+            class="time-picker" 
+            placeholder="00" 
+            min="0" 
+            max="23" 
+            [(ngModel)]="selectedHours"
+          />
+          <span class="colon-separator">:</span>
+          <input 
+            type="number" 
+            class="time-picker" 
+            placeholder="00" 
+            min="0"  
+            max="59" 
+            [(ngModel)]="selectedMinutes"
+          />
+        </div>
+      </div>
+    </div>
+
+    <button class="action-button" (click)="confirmConfiguration()">Confirmar configuración</button>
+  </div>
 </ion-content>
